@@ -32,7 +32,7 @@ public class carSelection : MonoBehaviour{
 
     if(direction == "Right"){
       currentCar++;
-      if(currentCar>=carList.Length)
+      if(currentCar>carList.Length -1)
         currentCar = 0;
     }else if(direction == "Left"){
       currentCar--;
@@ -41,5 +41,27 @@ public class carSelection : MonoBehaviour{
     }
 
     carList[currentCar].SetActive(true);
+
+    GameObject cloudSystem = Instantiate(Resources.Load("cloudParticle")) as GameObject;
+    ParticleSystem cloudPuff = cloudSystem.GetComponent<ParticleSystem> ();
+    cloudPuff.Play();
+    cloudPuff.transform.position = new Vector3(22f, -0.5f, 0f);
+    Destroy(cloudSystem, 2f);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
