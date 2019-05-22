@@ -45,8 +45,8 @@ public partial class Wit3D : MonoBehaviour {
 	int samplerate;
 
 	// API access parameters
-	string url = "https://api.wit.ai/speech?v=20180206";
-	string token = "GS6J4YIN3645G6I3SDCJBE76PGHWTM7F";
+	string url = "https://api.wit.ai/speech?v=20190521";
+	string token = "I2JLVOX4JLPPRKXME6DJOVNFPGVRCWPF";
 
 	//Custom 1
  	// GameObject to use as a default spawn point

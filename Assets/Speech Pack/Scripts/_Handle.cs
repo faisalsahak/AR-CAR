@@ -33,6 +33,14 @@ public partial class Wit3D : MonoBehaviour {
 				}
 			}
 
+			if (theAction.entities.start != null) {
+				foreach (Start aPart in theAction.entities.start) {
+					Debug.Log (aPart.value);
+					myHandleTextBox.text = aPart.value;
+					actionFound = true;
+				}
+			}
+
 			if (!actionFound) {
 				myHandleTextBox.text = "Request unknown, please ask a different way.";
 			} else {
@@ -61,9 +69,17 @@ public class Close {
 	public string type { get; set; }
 }
 
+public class Start {
+	public bool suggested { get; set; }
+	public double confidence { get; set; }
+	public string value { get; set; }
+	public string type { get; set; }
+}
+
 public class Entities {
 	public List<Open> open { get; set; }
 	public List<Close> close { get; set; }
+	public List<Start> close { get; set; }
 }
 
 public class RootObject {
